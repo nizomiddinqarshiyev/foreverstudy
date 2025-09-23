@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreverstudy Consulting Firm</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-top">
+            <div class="navbar-logo">
+                <img src="images/logo.jpg" alt="Foreverstudy Logo" class="logo-image"/>
+                <!-- You can use an <img> here for your logo if you have one -->
+                FOREVERSTUDY
+            </div>
+            <nav class="navbar-links">
+                <a href="#services">Talabalarimizdan eshitamiz</a>
+                <a href="#about">Biz haqimizda</a>
+                <a href="#partners">Hamkorlarimiz</a>
+                <a href="#tariflar">Ta’riflarimiz</a>
+            </nav>
+            <div class="navbar-contact">
+                +998 55 203 71 71
+            </div>
+        </div>
+    </header>
+    <!-- MAIN HERO SECTION -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Kelajagingizni biz bilan boshlang!</h1>
+                <p>Yevropa va Osiyoning eng yaxshi universitetlariga o‘qishga kirish va viza olishda ishonchli hamkoringiz!</p>
+                <a href="#" class="hero-btn" id="openHeroModal">Online Konsultatsiya</a>
+            </div>
+            <div class="modal-overlay" id="heroConsultModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeHeroModal">&times;</button>
+                <h3>Online konsultatsiya uchun ma'lumotlaringizni kiriting</h3>
+                <form class="consult-form" id="heroConsultForm">
+                    <input type="text" name="name" placeholder="Ismingiz" required>
+                    <input type="tel" name="phone" placeholder="Telefon raqamingiz" required>
+                    <input type="email" name="email" placeholder="Email (ixtiyoriy)">
+                    <textarea name="message" placeholder="Savolingiz yoki izoh..." rows="3"></textarea>
+                    <button type="submit" class="consult-submit">Yuborish</button>
+                </form>
+                <div class="consult-success" id="heroConsultSuccess" style="display:none;">
+                    So‘rovingiz yuborildi! Tez orada siz bilan bog‘lanamiz.
+                </div>
+            </div>
+        </div>
+            <div class="hero-slider">
+                <img src="images/slider1.jpg" alt="Universitet 1" class="hero-slide active">
+                <img src="images/slider2.jpg" alt="Universitet 2" class="hero-slide">
+                <img src="images/slider3.jpg" alt="Universitet 3" class="hero-slide">
+            </div>
+        </section>
+    </main>
+
+    <!-- ...existing code... -->
+    <section class="stats-section emu-stats-section">
+    <div class="emu-stats-container">
+                <!-- EMU stats section ichida, .emu-stats-container dan keyin joylashtiring -->
+        <div class="emu-blur-overlay"></div>
+        <div class="emu-stats-left">
+            <div class="emu-stats-label">FOREVERSTUDY STATISTIKASI</div>
+            <h2 class="emu-stats-title">
+                Xizmatlar mukammalligi<br>
+                <span class="emu-stats-title-accent">global nuqtai nazar bilan</span>
+            </h2>
+        </div>
+        <div class="emu-stats-right">
+            <div class="emu-stats-grid">
+                <div class="emu-stat-card">
+                    <div class="emu-stat-icon">
+                        <img src="images/university_830824.png" alt="University" />
+                    </div>
+                    <div>
+                        <div class="emu-stat-number">40+</div>
+                        <div class="emu-stat-desc">Hamkorlar</div>
+                    </div>
+                </div>
+                <div class="emu-stat-card">
+                    <div class="emu-stat-icon">
+                        <img src="images/nomad-visa_14232170.png" alt="Visa" />
+                    </div>
+                    <div>
+                        <div class="emu-stat-number">1000+</div>
+                        <div class="emu-stat-desc">dan ortiq talabalar Viza olgan</div>
+                    </div>
+                </div>
+                <div class="emu-stat-card">
+                    <div class="emu-stat-icon">
+                        <img src="images/hat_11499806.png" alt="Talaba" />
+                    </div>
+                    <div>
+                        <div class="emu-stat-number">95%</div>
+                        <div class="emu-stat-desc">Professor-o‘qituvchilar tarkibining ilmiy daraja darajasi</div>
+                    </div>
+                </div>
+                <div class="emu-stat-card">
+                    <div class="emu-stat-icon">
+                        <img src="images/certification_11112900.png" alt="Qoniqish" />
+                    </div>
+                    <div>
+                        <div class="emu-stat-number">5+</div>
+                        <div class="emu-stat-desc">yillik tajriba</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- ...existing code... -->
+    <section id="about" class="why-section">
+        <h2 class="why-title">NEGA AYNAN BIZ?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="images/stats_18492891.png" alt="Viza ko'rsatkichi" />
+                </div>
+                <div class="why-text">
+                    95% VIZA CHIQISH KO'RSATGICHI
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="images/experience_2303934.png" alt="Tajriba" />
+                </div>
+                <div class="why-text">
+                    KOREYA SOHASIDAGI 5 YILDAN ORTIQ TAJRIBA
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="images/support_11096683.png" alt="Konsultatsiya" />
+                </div>
+                <div class="why-text">
+                    KONSULTATSIYA BERISHDAN BOSHLAB KOREYAGA BORGANINGIZGACHA TO'LIQ YORDAM
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="images/research_1705260.png" alt="Shaffoflik" />
+                </div>
+                <div class="why-text">
+                    UMUMIY JARAYONLARNING SHAFFOF TARZDA KO'RSATILISHI
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- ...existing code... -->
+    <!-- <section id="services" class="services-section">
+        <div class="container">
+            <h2>Talabalarimizdan eshitamiz</h2>
+            <div class="services-testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        “Foreverstudy yordamida men Polsha universitetiga muvaffaqiyatli qabul qilindim va vizani tez oldim. Jamoaga katta rahmat!”
+                    </p>
+                    <span class="testimonial-author">— Dilshod, Varshava universiteti talabasi</span>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        “Hujjatlarni tayyorlash va maslahatlar juda aniq va foydali bo‘ldi. Hammasi oson va tez amalga oshdi.”
+                    </p>
+                    <span class="testimonial-author">— Maftuna, Litva universiteti talabasi</span>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        “Foreverstudy orqali o‘qishga kirish orzuyim amalga oshdi. Ularning yordami bilan viza olishda muammo bo‘lmadi.”
+                    </p>
+                    <span class="testimonial-author">— Azizbek, Vengriya universiteti talabasi</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="services-title">TALABALARIMIZDAN ESHITAMIZ</h2>
+            <div class="testimonial-slider">
+                <button class="slider-btn prev-btn">&#8592;</button>
+                <div class="testimonial-track">
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/SU31ByO645A" width="260" height="460" style="border:none;overflow:hidden" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <button class="slider-btn next-btn">&#8594;</button>
+            </div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+         <!-- ...existing code... -->
+    <section id="tariflar" class="tarif-section">
+        <h2 class="tarif-title">BIZNING TA’RIFLARIMIZ</h2>
+        <div class="tarif-cards">
+            <div class="tarif-card">
+                <div class="tarif-name">Oddiy</div>
+                <div class="tarif-price">5 500 000 <span>so‘m</span></div>
+                <div class="tarif-desc">Kundalik vazifalar uchun qulay va arzon yechim</div>
+                <ul class="tarif-list">
+                    <li>2 nusxada hujjatlarni tayyorlash (apostil, tarjima notarius)</li>
+                    <li>Talaba uchun 1 kunlik bank schot (Kapital)</li>
+                    <li>Ota-ona uchun 1 kunlik bank schot (Kapital)</li>
+                    <li>O’qishga qabul qilinishini kafolatlash</li>
+                    <li>Barcha masalalarda nazariy ko’rsatma va maslahatlar berish</li>
+                </ul>
+                <div class="tarif-for">1% lik universitetga topshiruvchilar</div>
+                <div class="tarif-note">*Viza chiqmasa, to’lov 100% qaytariladi</div>
+                <a href="tel:+998552037171" class="tarif-btn">Batafsil ma'lumot olish</a>
+            </div>
+            <div class="tarif-card popular">
+                <div class="tarif-name">Plus</div>
+                <div class="tarif-price">8 500 000 <span>so‘m</span></div>
+                <div class="tarif-desc">Ko‘proq imkoniyat va kengaytirilgan xizmatlar</div>
+                <ul class="tarif-list">
+                    <li>Oddiy tarifdagi barcha xizmatlar</li>
+                    <li>Qo‘shimcha konsultatsiyalar</li>
+                    <li>Universitet tanlashda yordam</li>
+                    <li>Viza uchun hujjatlarni to‘liq tayyorlash</li>
+                    <li>Qo‘shimcha monitoring va yordam</li>
+                </ul>
+                <div class="tarif-for">Ko‘proq yordam va monitoring istaganlar uchun</div>
+                <div class="tarif-note">*Viza chiqmasa, to’lov 100% qaytariladi</div>
+                <a href="tel:+998552037171" class="tarif-btn">Batafsil ma'lumot olish</a>
+            </div>
+            <div class="tarif-card">
+                <div class="tarif-name">Pro</div>
+                <div class="tarif-price">12 000 000 <span>so‘m</span></div>
+                <div class="tarif-desc">To‘liq xizmat va maksimal natija uchun</div>
+                <ul class="tarif-list">
+                    <li>Plus tarifidagi barcha xizmatlar</li>
+                    <li>Shaxsiy menejer va doimiy monitoring</li>
+                    <li>Universitet va grant tanlashda to‘liq yordam</li>
+                    <li>Viza olishda premium yordam</li>
+                    <li>Qo‘shimcha bonus va chegirmalar</li>
+                </ul>
+                <div class="tarif-for">Eng yuqori natija va qulaylik istaganlar uchun</div>
+                <div class="tarif-note">*Viza chiqmasa, to’lov 100% qaytariladi</div>
+                <a href="tel:+998552037171" class="tarif-btn">Batafsil ma'lumot olish</a>
+            </div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+         <!-- ...existing code... -->
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">BIZNING MANZILIMIZ</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><b>Manzil:</b> Toshkent shahri, Chilonzor tumani, Qatortol ko‘chasi, 1-uy, 2-qavat</p>
+                <p><b>Telefon:</b> <a href="tel:+998552037171">+998 55 203 71 71</a></p>
+                <p><b>Email:</b> <a href="mailto:info@foreverstudy.uz">info@foreverstudy.uz</a></p>
+                <p><b>Ish vaqti:</b> Dushanba–Shanba, 10:00–18:00</p>
+            </div>
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps?q=41.2995,69.2401&z=16&output=embed"
+                    width="350" height="220" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+
+        <section id="partners" class="partners-section">
+        <h2 class="partners-title">HAMKORLARIMIZ</h2>
+        <div class="partners-logos">
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 1">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 2">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 3">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 4">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 5">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 6">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 7">
+            </div>
+            <div class="partner-logo">
+                <img src="images/logo.jpg" alt="Hamkor 8">
+            </div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+        <footer>
+    <!-- ...existing code... -->
+    <footer>
+        <p>&copy; 2023 Foreverstudy Consulting Firm. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
