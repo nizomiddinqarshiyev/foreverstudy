@@ -445,70 +445,7 @@ nav ul li a:focus {
         font-size: 1.1rem;
     }
 }
-/* ...existing code... */
-/* ...existing code... */
-/* ...existing code...
-.services-section {
-    background: #fff;
-    padding: 48px 0 32px 0;
-    margin: 0 auto 32px auto;
-    max-width: 1200px;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(26,79,163,0.08);
-}
 
-.services-section h2 {
-    text-align: center;
-    color: #1a4fa3;
-    margin-bottom: 32px;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.services-testimonials {
-    display: flex;
-    justify-content: space-around;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.testimonial {
-    background: #f4f7fb;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(26,79,163,0.06);
-    padding: 24px 18px;
-    max-width: 340px;
-    flex: 1 1 260px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.testimonial-text {
-    font-size: 1.08rem;
-    color: #222;
-    margin-bottom: 14px;
-    font-style: italic;
-}
-
-.testimonial-author {
-    font-size: 0.98rem;
-    color: #1a4fa3;
-    font-weight: 500;
-}
-
-/* Responsive 
-@media (max-width: 900px) {
-    .services-testimonials {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-    }
-    .testimonial {
-        max-width: 95%;
-    }
-} */
-
-/* ...existing code... */
 .why-section {
     background: #ffffff;
     padding: 56px 0 48px 0;
@@ -620,14 +557,7 @@ why.why-card.card-hovered .why-card {
 /* ...existing code... */
 
 /* ...existing code... */
-.services-section {
-    background: #232328;
-    padding: 48px 0 32px 0;
-    margin: 0 auto 32px auto;
-    max-width: 100vw;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(26,79,163,0.08);
-}
+
 
 .services-title {
     text-align: center;
@@ -763,7 +693,7 @@ why.why-card.card-hovered .why-card {
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 
     	min-width: 360px;
-	max-width: 360px;
+	max-width: 400px;
 	margin: 0 25px;
 	background: linear-gradient(
 		135deg,
@@ -773,7 +703,7 @@ why.why-card.card-hovered .why-card {
 	border-radius: 1.2rem;
 	overflow: hidden;
 	backdrop-filter: blur(10px);
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.2);
+	box-shadow: 5px 15px 25px rgba(43, 64, 90, 0.5), 0 0 30px rgba(56, 189, 248, 0.2);
 	transition: all 0.6s cubic-bezier(0.21, 0.61, 0.35, 1);
 	transform-origin: center center;
 	position: relative;
@@ -782,401 +712,13 @@ why.why-card.card-hovered .why-card {
 
 .slide-content {
     background: rgba(0, 0, 0, 0.5);
-    max-width: 100%;
+    
     border-radius: 12px;
     text-align: center;
 }
 
 
 
-
-.carousel-container {
-	width: 100%;
-	max-width: 80%;
-	position: relative;
-	/* perspective: 2000px; */
-	padding: 3rem 3rem;
-    left: 180px;
-    right: 180px;
-	z-index: 10;
-}
-
-.carousel-track {
-	display: flex;
-	transition: transform 0.75s cubic-bezier(0.21, 0.61, 0.35, 1);
-	transform-style: preserve-3d;
-}
-
-.carousel-card {
-    	min-width: 180px;
-	max-width: 180px;
-	margin: 0 25px;
-	background: linear-gradient(
-		135deg,
-		rgba(30, 41, 59, 0.85),
-		rgba(15, 23, 42, 0.9)
-	);
-	border-radius: 1.2rem;
-	overflow: hidden;
-	backdrop-filter: blur(10px);
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.2);
-	transition: all 0.6s cubic-bezier(0.21, 0.61, 0.35, 1);
-	transform-origin: center center;
-	position: relative;
-	border: 1px solid rgba(94, 234, 212, 0.2);
-}
-
-/* Holographic border effect */
-.carousel-card::before {
-	content: "";
-	position: absolute;
-	inset: -2px;
-	background: linear-gradient(
-		45deg,
-		transparent 0%,
-		var(--neon-blue) 25%,
-		var(--neon-green) 50%,
-		var(--neon-pink) 75%,
-		transparent 100%
-	);
-	z-index: -1;
-	border-radius: 1.3rem;
-	filter: blur(8px);
-	opacity: 0;
-	transition: opacity 0.5s ease;
-	animation: borderGlow 6s linear infinite;
-}
-
-@keyframes borderGlow {
-	0% {
-		background-position: 0% 50%;
-		opacity: 0.3;
-	}
-	50% {
-		background-position: 100% 50%;
-		opacity: 0.5;
-	}
-	100% {
-		background-position: 0% 50%;
-		opacity: 0.3;
-	}
-}
-
-.carousel-card.is-active::before {
-	opacity: 1;
-	background-size: 300% 300%;
-}
-
-.carousel-card:not(.is-active) {
-	transform: scale(0.8) rotateY(35deg) translateZ(-100px);
-	opacity: 0.45;
-	filter: saturate(0.6) brightness(0.7);
-}
-
-.carousel-card.is-prev {
-	transform-origin: right center;
-	transform: scale(0.75) rotateY(45deg) translateX(-80px) translateZ(-150px);
-}
-
-.carousel-card.is-next {
-	transform-origin: left center;
-	transform: scale(0.75) rotateY(-45deg) translateX(80px) translateZ(-150px);
-}
-
-.carousel-card.is-active {
-	transform: scale(1) rotateY(0) translateZ(0);
-	opacity: 1;
-	z-index: 20;
-	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-primary),
-		inset 0 0 20px rgba(56, 189, 248, 0.1);
-	filter: saturate(1.2) brightness(1.1);
-}
-
-.card-image-container {
-	position: relative;
-	height: 100px;
-	overflow: hidden;
-	border-bottom: 1px solid rgba(94, 234, 212, 0.3);
-}
-
-.card-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform 1.5s ease;
-}
-
-.carousel-card.is-active .card-image {
-	transform: scale(1.05);
-}
-
-/* HUD overlay effect on images */
-.card-image-container::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: linear-gradient(120deg, rgba(56, 189, 248, 0.1), transparent 70%),
-		radial-gradient(circle at 80% 20%, rgba(94, 234, 212, 0.15), transparent 50%);
-	pointer-events: none;
-}
-
-/* Scan line effect */
-.card-image-container::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: repeating-linear-gradient(
-		0deg,
-		rgba(6, 182, 212, 0.05) 0px,
-		rgba(6, 182, 212, 0.05) 1px,
-		transparent 1px,
-		transparent 4px
-	);
-	pointer-events: none;
-	opacity: 0.5;
-	z-index: 5;
-}
-
-.card-content {
-	padding: 1.75rem;
-	color: #f1f5f9;
-}
-
-.card-title {
-	font-family: "Orbitron", sans-serif;
-	margin-bottom: 0.75rem;
-	letter-spacing: 1px;
-	position: relative;
-	display: inline-block;
-}
-
-/* Text glow effect */
-.card-title::after {
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: transparent;
-	-webkit-text-stroke: 0.5px;
-	filter: blur(3px);
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
-.carousel-card.is-active .card-title::after {
-	opacity: 0.8;
-}
-
-.card-description {
-	font-size: 0.9rem;
-	line-height: 1.6;
-	color: rgba(241, 245, 249, 0.8);
-	font-weight: 300;
-}
-
-/* HUD-style progress bar */
-.card-progress {
-	height: 3px;
-	background: rgba(56, 189, 248, 0.15);
-	margin-top: 1.25rem;
-	position: relative;
-	border-radius: 4px;
-	overflow: hidden;
-}
-
-.progress-value {
-	position: absolute;
-	height: 100%;
-	background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
-	border-radius: 4px;
-	width: 75%;
-}
-
-.card-stats {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 0.5rem;
-	font-size: 0.7rem;
-	color: rgba(241, 245, 249, 0.6);
-}
-
-/* Futuristic navigation buttons */
-.carousel-button {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: rgba(12, 74, 110, 0.3);
-	color: #38bdf8;
-	border: 1px solid rgba(14, 165, 233, 0.4);
-	border-radius: 50%;
-	width: 48px;
-	height: 48px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	z-index: 20;
-	transition: all 0.3s ease;
-	backdrop-filter: blur(5px);
-	box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-}
-
-.carousel-button:hover {
-	background-color: rgba(14, 165, 233, 0.3);
-	color: #e0f2fe;
-	transform: translateY(-50%) scale(1.1);
-	box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-
-.carousel-button:active {
-	transform: translateY(-50%) scale(0.95);
-}
-
-/* Button hover effect */
-.carousel-button::before {
-	content: "";
-	position: absolute;
-	inset: -2px;
-	background: radial-gradient(circle, var(--neon-blue), transparent 70%);
-	border-radius: 50%;
-	opacity: 0;
-	z-index: -1;
-	transition: opacity 0.3s ease;
-}
-
-.carousel-button:hover::before {
-	opacity: 0.7;
-	animation: pulseGlow 2s infinite;
-}
-
-@keyframes pulseGlow {
-	0% {
-		transform: scale(1);
-		opacity: 0.7;
-	}
-	50% {
-		transform: scale(1.2);
-		opacity: 0.3;
-	}
-	100% {
-		transform: scale(1);
-		opacity: 0.7;
-	}
-}
-
-.carousel-button.prev {
-	left: -24px;
-}
-
-.carousel-button.next {
-	right: -24px;
-}
-
-/* Indicator dots */
-.carousel-indicators {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-	margin-top: 2rem;
-}
-
-.indicator {
-	width: 24px;
-	height: 4px;
-	background: rgba(56, 189, 248, 0.2);
-	border-radius: 2px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-.indicator.active {
-	background: #38bdf8;
-	box-shadow: 0 0 10px #38bdf8;
-}
-
-/* Tech details overlay */
-.tech-details {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(15, 23, 42, 0.85);
-	backdrop-filter: blur(10px);
-	padding: 0.75rem;
-	transform: translateY(100%);
-	transition: transform 0.4s cubic-bezier(0.21, 0.61, 0.35, 1);
-	z-index: 25;
-	border-top: 1px solid rgba(94, 234, 212, 0.3);
-}
-
-.carousel-card.is-active:hover .tech-details {
-	transform: translateY(0);
-}
-
-.tech-tag {
-	display: inline-block;
-	margin-right: 8px;
-	margin-bottom: 8px;
-	padding: 4px 8px;
-	font-size: 0.7rem;
-	background: rgba(56, 189, 248, 0.15);
-	border: 1px solid rgba(56, 189, 248, 0.3);
-	border-radius: 4px;
-	color: #7dd3fc;
-}
-
-.is-far-next {
-	transform: scale(0.8) rotateY(-45deg) translateZ(-100px) !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 360px) {
-    .carousel-container {
-        padding: 1.5rem 1.5rem;
-        left: 0;
-        right: 0;
-    }
-	.carousel-button {
-		width: 40px;
-		height: 40px;
-	}
-
-	.carousel-button.prev {
-		left: 5px;
-	}
-
-	.carousel-button.next {
-		right: 5px;
-	}
-
-	.carousel-card {
-		min-width: 260px;
-		max-width: 260px;
-		margin: 0 15px;
-	}
-
-	.carousel-card:not(.is-active) {
-		transform: scale(0.85) rotateY(25deg);
-	}
-
-	.carousel-card.is-prev {
-		transform: scale(0.8) rotateY(30deg) translateX(-40px);
-	}
-
-	.carousel-card.is-next {
-		transform: scale(0.8) rotateY(-30deg) translateX(40px);
-	}
-
-	.card-image-container {
-		height: 160px;
-	}
-}
 
 
 
@@ -1201,13 +743,6 @@ why.why-card.card-hovered .why-card {
 }
 
 .tarif-cards {
-    /* display: flex;
-    gap: 36px;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 1100px; */
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -1236,25 +771,8 @@ why.why-card.card-hovered .why-card {
     border: 2px solid #232328;
     transition: border 0.2s, box-shadow 0.2s;
     position: relative;
-    /* padding: 38px 32px 32px 32px;
-     position: absolute;
-    top: 0;
-    left: 0;
-    width: 360px;
-    min-width: 320px;
-    max-width: 360px;
-    transition: 
-        box-shadow 0.3s, 
-        transform 0.3s, 
-        z-index 0.3s,
-        filter 0.3s;
-    opacity: 0.92;
-    z-index: 1;
-    filter: blur(1.5px) brightness(0.7);
-    pointer-events: auto; */
 }
 
-/* Hover effect: faqat ustidagi card tiniq va oldinda */
 .tarif-card:hover,
 .tarif-card:focus-within {
     /* z-index: 10; */
@@ -1317,7 +835,8 @@ why.why-card.card-hovered .why-card {
     color: #fff;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
+    margin-top: 8px;
     letter-spacing: 1px;
     max-width: 60%;
 }
@@ -1414,10 +933,7 @@ why.why-card.card-hovered .why-card {
     color: #fff;
 }
 
-/* Responsive: ustma-ust joylashuv */
-
-/* Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 100%) {
     .tarif-cards {
         display: flex;
         flex-direction: column;
@@ -1442,20 +958,8 @@ why.why-card.card-hovered .why-card {
     .tarif-card:focus-within {
         transform: scale(1.03);
     }
-    /* .tarif-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-    .tarif-card {
-        max-width: 98vw;
-        min-width: 0;
-        width: 100%;
-    } */
+   
 }
-/* ...existing code... */
-
-/* ...existing code... */
 
 .partners-section {
     background: #ffffff;
