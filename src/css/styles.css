@@ -13,22 +13,26 @@ body {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #231b6b;
   overflow: hidden;
   align-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar-logo{
-    display: flex;
+img.logo-image {
+    width: 30px;
+    height: 30px;
 }
-.navbar-logo img{
+
+.nav-logo{
+    display: none;
+    display: flex;
+    flex-wrap: wrap;
     font-weight: bold;
-    font-size: 1.2rem;
     color: #3898f7;
     letter-spacing: 1px;
-    display: flex;
     align-items: center;
-    gap: 8px;
     width: 16px;
     height: auto;
 }
@@ -106,6 +110,7 @@ body {
     }
     .topnav:nth-first-child {
         display: flex;
+        width: 50%;
     }
     .topnav {
         flex-direction: column;
@@ -1773,17 +1778,24 @@ why.why-card.card-hovered .why-card {
 }
 
 @media (max-width: 900px) {
-    .navbar-top {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 8px;
+    .hero-content {
+        height: 40%;
+        width: 50%;
     }
-    .navbar-links {
-        gap: 18px;
+    .hero-content h1{
+        font-size: 1rem; 
     }
-    .navbar-contact {
-        padding: 6px 10px;
-        font-size: 0.98rem;
+    .hero-content p{
+        font-size: 0.8rem;
+    }
+    .hero-btn {
+        font-size: 0.7rem;
+    }
+    .hero-slider{
+        position: relative;
+    }
+    .hero-section{
+        height: 70vw;
     }
 }
 
@@ -1805,7 +1817,7 @@ why.why-card.card-hovered .why-card {
         height: auto;
     }
     .tarif-card {
-        position: static;
+        position: relative;
         width: 98vw;
         max-width: 98vw;
         min-width: 0;
@@ -1814,6 +1826,9 @@ why.why-card.card-hovered .why-card {
         filter: none;
         z-index: 1;
         transform: none;
+    }
+    .tarif-title{
+        font-size: 16px;
     }
     .faq-section {
         padding: 12px 2px;
@@ -1843,10 +1858,13 @@ why.why-card.card-hovered .why-card {
         max-width: 100%;
     }
     .why-card{
+        margin-top: 0;
         max-width: 80px;
         height: 80px;
         min-height: auto;
         position: relative;
+        justify-content: center;
+        align-items: center;
     }
     .why-grid{
         display: flex;
@@ -1854,13 +1872,29 @@ why.why-card.card-hovered .why-card {
         justify-content: center;
     }
     .why-text {
-        font-size: 10px;
+        font-size: 8px;
         height: 100%;
     }
     .why-icon {
         width: 20px;
         height: 20px;
     }
-
+    .contact-content{
+        flex-direction: column;
+        gap: 0px;
+        justify-content: flex-start;
+    }
+    .contact-map{
+        width: 100%;
+        min-width: 0;
+        max-height: 180px;  
+        position: relative;
+    }
+    .contact-info {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 0px;
+        margin-left: 5px;
+    }
 }
     
