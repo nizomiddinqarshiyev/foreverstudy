@@ -505,6 +505,7 @@ img.logo-image {
         justify-content: center;
     }
     .emu-stat-card {
+        padding: 8px 20px;
         min-width: 100px;
         max-width: 100px;
     }
@@ -1764,7 +1765,7 @@ why.why-card.card-hovered .why-card {
         transform: none;
     }
     .tarif-title{
-        font-size: 16px;
+        font-size: 24px;
     }
     .faq-section {
         padding: 12px 2px;
@@ -1786,9 +1787,16 @@ why.why-card.card-hovered .why-card {
         gap: 8px 4px;
     }
     .partner-logo {
-        max-width: 50px;
-        min-width: 40px;
+        max-width: 60px;
+        min-width: 50px;
+        max-height: 60px;
+        min-height: 50px;
         padding: 4px 2px;
+    }
+
+    .partner-logo img{
+        width: 45px;
+        height: 45px;
     }
     .why-section{
         max-width: 100%;
