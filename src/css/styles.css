@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f5f3f7, #a9d1ff);
+    /* background: linear-gradient(135deg, #f5f3f7, #a9d1ff); */
 
 }
 
@@ -867,22 +867,21 @@ why.why-card.card-hovered .why-card {
 @media (max-width: 400px) {
     .owl-stage {
         gap: 5px;
+        justify-content: center;
+        align-items: center;
     }
-    .owl-nav{
-        display: none;
+    .owl-item {
+        margin-right: 0px;
     }
 
-    .owl-dots {
-        display: none;
-    }
 
     .slide {
         border-radius: 3px;
-        min-width: 70px;
-        max-width: 100px;
-        height: 160px;
-        gap: 6px;
-        margin: 0 12px;
+        min-width: 300px;
+        max-width: 300px;
+        height: 400px;
+        /* gap: 6px; */
+        /* margin: 0 12px; */
     }
     .video {
         width: 100%;
@@ -896,15 +895,12 @@ why.why-card.card-hovered .why-card {
         padding-top: 10px;
     }
     slide-title {
-        font-size: 30px;
+        font-size: 50px;
     }
     .slide_link{
         border-radius: 5px;
         padding: 5px;
         width: 100%;
-    }
-    .video {
-
     }
 }
 
