@@ -11,7 +11,6 @@ body {
 
 }
 
-
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #231b6b;
@@ -19,6 +18,14 @@ body {
   align-items: center;
   align-items: center;
   justify-content: center;
+   position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #231b6b;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
 img.logo-image {
@@ -32,6 +39,7 @@ img.logo-image {
     flex-wrap: wrap;
     font-weight: bold;
     color: #3898f7;
+
     letter-spacing: 1px;
     align-items: center;
     width: 16px;
@@ -41,6 +49,7 @@ img.logo-image {
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
+
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -65,6 +74,9 @@ img.logo-image {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+  position: relative;
+  top: 10px;
+  right: 0;
 }
 
 .logo-image{
@@ -83,6 +95,9 @@ img.logo-image {
     float: right;
     display: block;
   }
+  .topnav {
+    position: sticky;
+  }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
@@ -91,7 +106,7 @@ img.logo-image {
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 10px;
   }
   .topnav.responsive a {
     float: none;
@@ -117,7 +132,13 @@ img.logo-image {
         flex-direction: column;
         align-items: center;
         padding: 8px 4px;
+        position: sticky;
         max-width: 100vw;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
     }
 }
 
@@ -185,6 +206,7 @@ img.logo-image {
 
 .hero-content h1 {
     font-weight: 700;
+    font-size: large;
     margin-bottom: 18px;
     letter-spacing: 1px;
 }
@@ -978,15 +1000,6 @@ why.why-card.card-hovered .why-card {
     transform: scale(1.04) translateY(-18px);
 }
 
-/* Hover bo'lsa, boshqa kartalar xiralashadi */
-/* .tarif-cards:hover .tarif-card,
-.tarif-cards:focus-within .tarif-card {
-    opacity: 0.7;
-    filter: blur(2.5px) brightness(0.2);
-    z-index: 1;
-    transform: scale(0.98);
-} */
-
 .tarif-card:hover,
 .tarif-card:focus-within {
     opacity: 1;
@@ -1158,7 +1171,7 @@ why.why-card.card-hovered .why-card {
 @media (max-width: 900px) {
 
     .tarif-card {
-        max-width: 100px;
+        max-width: 80vw;
     }
 
     .tarif-name{
@@ -1442,6 +1455,8 @@ why.why-card.card-hovered .why-card {
     padding: 44px 24px 38px 24px;
     box-shadow: 0 2px 12px rgba(26,79,163,0.08);
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .faq-title {
@@ -1471,8 +1486,8 @@ why.why-card.card-hovered .why-card {
 .faq-list {
     background: #faf7fb;
     border-radius: 14px;
-    padding: 18px 0;
     margin-bottom: 32px;
+    width: 100%;
     box-shadow: 0 2px 8px rgba(122, 57, 163, 0.04);
     box-shadow: 0 8px 16px 0 #7c3aed, 0 2px 8px #36ddd7;
 }
@@ -1740,8 +1755,8 @@ why.why-card.card-hovered .why-card {
     }
     .tarif-card {
         position: relative;
-        width: 98vw;
-        max-width: 98vw;
+        width: 80vw;
+        max-width: 80vw;
         min-width: 0;
         margin-bottom: 18px;
         opacity: 1;
@@ -1822,8 +1837,22 @@ why.why-card.card-hovered .why-card {
         margin-bottom: 0px;
         margin-left: 5px;
     }
-    h2 {
-        color: #003366;
-    }
+    
 }
     
+h2 {
+        color: #003366;
+        font-size: medium;
+    }
+
+@media (max-width: 375px) {
+    .hero-content {
+        font-size: 0.9rem;
+    }
+    .hero-section{
+        height: 80vw;
+    }
+    h2 {
+        font-size: medium;
+    }
+}
