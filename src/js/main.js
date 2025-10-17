@@ -632,63 +632,101 @@ window.onload = () => {
 
 
 // ...existing code...
-document.addEventListener('DOMContentLoaded', function() {
-    // ...boshqa kodlar...
+// document.addEventListener('DOMContentLoaded', function() {
+//     // ...boshqa kodlar...
 
-    // Hero konsultatsiya modal
+//     // Hero konsultatsiya modal
+//     const openHeroBtn = document.getElementById('openHeroModal');
+//     const closeHeroBtn = document.getElementById('closeHeroModal');
+//     const heroModal = document.getElementById('heroConsultModal');
+//     const heroForm = document.getElementById('heroConsultForm');
+//     const heroSuccess = document.getElementById('heroConsultSuccess');
+
+//     if (openHeroBtn && closeHeroBtn && heroModal) {
+//         openHeroBtn.onclick = (e) => {
+//             e.preventDefault();
+//             heroModal.classList.add('active');
+//         };
+//         closeHeroBtn.onclick = () => {
+//             heroModal.classList.remove('active');
+//             heroForm.style.display = '';
+//             heroSuccess.style.display = 'none';
+//         };
+//         window.addEventListener('click', (e) => {
+//             if (e.target === heroModal) {
+//                 heroModal.classList.remove('active');
+//                 heroForm.style.display = '';
+//                 heroSuccess.style.display = 'none';
+//             }
+//         });
+//     }
+
+//     if (heroForm) {
+//         heroForm.onsubmit = function(e) {
+//             e.preventDefault();
+//             const formData = {
+//                 name: heroForm.name.value,
+//                 phone: heroForm.phone.value,
+//                 email: heroForm.email.value,
+//                 message: heroForm.message.value
+//             };
+//             fetch('https://script.google.com/macros/s/AKfycbwYW5sekmkmaBPke7vbTtfRHiMQ9Cbk4BJ9HCTRSCa3jrbVdEP-dTxLTgTERezRyqAR/exec', {
+//                 method: 'POST',
+//                 body: JSON.stringify(formData),
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 }
+//             }).then(() => {
+//                 heroForm.style.display = 'none';
+//                 heroSuccess.style.display = 'block';
+//             }).catch(() => {
+//                 heroForm.style.display = 'none';
+//                 heroSuccess.textContent = "Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.";
+//                 heroSuccess.style.display = 'block';
+//             });
+//         };
+//     }
+
+//     // ...boshqa kodlar... AKfycbwYW5sekmkmaBPke7vbTtfRHiMQ9Cbk4BJ9HCTRSCa3jrbVdEP-dTxLTgTERezRyqAR
+// });
+
+// ...existing code...
+document.addEventListener('DOMContentLoaded', function() {
+    // Hero konsultatsiya modal (Google Form iframe)
     const openHeroBtn = document.getElementById('openHeroModal');
     const closeHeroBtn = document.getElementById('closeHeroModal');
     const heroModal = document.getElementById('heroConsultModal');
-    const heroForm = document.getElementById('heroConsultForm');
-    const heroSuccess = document.getElementById('heroConsultSuccess');
+    const heroIframe = document.getElementById('heroFormIframe');
 
-    if (openHeroBtn && closeHeroBtn && heroModal) {
-        openHeroBtn.onclick = (e) => {
+    if (openHeroBtn && heroModal) {
+        openHeroBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            heroModal.classList.add('active');
-        };
-        closeHeroBtn.onclick = () => {
-            heroModal.classList.remove('active');
-            heroForm.style.display = '';
-            heroSuccess.style.display = 'none';
-        };
-        window.addEventListener('click', (e) => {
-            if (e.target === heroModal) {
-                heroModal.classList.remove('active');
-                heroForm.style.display = '';
-                heroSuccess.style.display = 'none';
+            const formUrl = openHeroBtn.dataset.form;
+            if (formUrl) {
+                heroIframe.src = formUrl; // load Google Form (embedded)
+                heroModal.classList.add('active');
+            } else {
+                // fallback: open form in new tab if no data-form provided
+                const href = openHeroBtn.getAttribute('href');
+                if (href && href !== '#') window.open(href, '_blank');
             }
         });
     }
 
-    if (heroForm) {
-        heroForm.onsubmit = function(e) {
-            e.preventDefault();
-            const formData = {
-                name: heroForm.name.value,
-                phone: heroForm.phone.value,
-                email: heroForm.email.value,
-                message: heroForm.message.value
-            };
-            fetch('https://script.google.com/macros/s/AKfycbwYW5sekmkmaBPke7vbTtfRHiMQ9Cbk4BJ9HCTRSCa3jrbVdEP-dTxLTgTERezRyqAR/exec', {
-                method: 'POST',
-                body: JSON.stringify(formData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(() => {
-                heroForm.style.display = 'none';
-                heroSuccess.style.display = 'block';
-            }).catch(() => {
-                heroForm.style.display = 'none';
-                heroSuccess.textContent = "Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.";
-                heroSuccess.style.display = 'block';
-            });
-        };
+    if (closeHeroBtn && heroModal) {
+        closeHeroBtn.addEventListener('click', () => {
+            heroModal.classList.remove('active');
+            heroIframe.src = ''; // stop iframe
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === heroModal) {
+                heroModal.classList.remove('active');
+                heroIframe.src = '';
+            }
+        });
     }
-
-    // ...boshqa kodlar... AKfycbwYW5sekmkmaBPke7vbTtfRHiMQ9Cbk4BJ9HCTRSCa3jrbVdEP-dTxLTgTERezRyqAR
 });
+// ...existing code...
 
 
 // FAQ accordion
@@ -717,6 +755,57 @@ function myFunction() {
   }
 }
 
+// ...existing code...
 
+document.addEventListener('DOMContentLoaded', function() {
+    // ...other code...
+
+    // Contact social copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            const link = btn.dataset.link;
+            if (!link) return;
+            try {
+                await navigator.clipboard.writeText(link);
+                // show temporary confirmation
+                let confirmEl = btn.parentElement.querySelector('.copy-confirm');
+                if (!confirmEl) {
+                    confirmEl = document.createElement('span');
+                    confirmEl.className = 'copy-confirm';
+                    confirmEl.textContent = 'Copied';
+                    btn.parentElement.appendChild(confirmEl);
+                }
+                confirmEl.style.opacity = '1';
+                // hide after 1.5s
+                setTimeout(() => {
+                    if (confirmEl) confirmEl.remove();
+                }, 1500);
+            } catch (err) {
+                // fallback: select and copy
+                const textarea = document.createElement('textarea');
+                textarea.value = link;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    let confirmEl = btn.parentElement.querySelector('.copy-confirm');
+                    if (!confirmEl) {
+                        confirmEl = document.createElement('span');
+                        confirmEl.className = 'copy-confirm';
+                        confirmEl.textContent = 'Copied';
+                        btn.parentElement.appendChild(confirmEl);
+                    }
+                    setTimeout(() => { if (confirmEl) confirmEl.remove(); }, 1500);
+                } catch (e) {
+                    alert('Copy failed. Please copy manually: ' + link);
+                }
+                textarea.remove();
+            }
+        });
+    });
+
+    // ...other code...
+});
+// ...existing code...
 
 
