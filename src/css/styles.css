@@ -1003,11 +1003,14 @@ why.why-card.card-hovered .why-card {
 .slide-content {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
-    border-radius: 12px;
+    border-radius: 0, 12px;
     text-align: center;
     display: grid;    
+    position: absolute;
 }
-
+.owl-nav{
+    font-size: 3rem;
+}
 .slide-title {
     padding-top: 10px;
     font-size: x-large;
