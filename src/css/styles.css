@@ -953,6 +953,7 @@ why.why-card.card-hovered .why-card {
         height: 36px;
         font-size: 1.3rem;
     }
+
 }
 /* ...existing code... */
 
@@ -1998,12 +1999,17 @@ why.why-card.card-hovered .why-card {
 
     .why-text {
         align-items: center;
-        font-size: 12px;
+        font-size: 14px;
         height: 100%;
     }
     .why-icon {
         width: 20px;
         height: 20px;
+    }
+    .kg-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: auto;
     }
 
     .kg-grid .why-card {
@@ -2011,8 +2017,11 @@ why.why-card.card-hovered .why-card {
         flex-direction: column;
         margin-top: 0;
         height: 120px;
-        min-height: auto;
+        min-height: 40px;
+        max-width: auto;
         position: relative;
+        padding-left: 0;
+        padding-right: 0;
 
     }
     .kg-grid .why-card.visible {
@@ -2084,7 +2093,7 @@ h2 {
         font-size: medium;
     }
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
     .hero-content {
         font-size: 0.9rem;
     }
@@ -2094,7 +2103,7 @@ h2 {
     h2 {
         font-size: medium;
     }
-}
+} */
 
 
 
@@ -2130,7 +2139,6 @@ h2 {
 
 .social-meta {
     display: flex;
-    flex-direction: column;
     gap: 6px;
     flex: 1 1 auto;
 }
