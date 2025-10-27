@@ -11,6 +11,122 @@ body {
 
 }
 
+
+/* ...existing code... */
+
+/* SITE TEST BADGE */
+.site-test-badge {
+    position: fixed;
+    top: 12px;                 /* badge sits near top and overlays navbar */
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    z-index: 9999;             /* above navbar */
+    pointer-events: auto;
+    width: min(920px, calc(100% - 32px));
+    max-width: 92%;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(15,23,42,0.25);
+    overflow: hidden;
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.3s;
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+/* inner styling: animated gradient + small bounce */
+.site-test-badge-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 16px;
+    background: linear-gradient(90deg, rgba(124,58,237,0.12), rgba(26,79,163,0.08));
+    position: relative;
+    overflow: hidden;
+}
+
+/* moving highlight */
+.site-test-badge-inner::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 100%);
+    mix-blend-mode: overlay;
+    pointer-events:none;
+    animation: badgeShine 3.6s linear infinite;
+    opacity:0.9;
+}
+
+/* subtle vertical bob */
+@keyframes badgeFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+/* shine animation */
+@keyframes badgeShine {
+    0% { transform: translateX(-120%); }
+    50% { transform: translateX(0%); }
+    100% { transform: translateX(120%); }
+}
+
+.site-test-badge:hover {
+    transform: translateX(-50%) translateY(-3px) scale(1.01);
+}
+
+.site-test-badge-inner {
+    animation: badgeFloat 6s ease-in-out infinite;
+}
+
+/* text */
+.site-test-text{
+    color: blue;
+    font-weight:600;
+    font-size:1rem;
+    letter-spacing:0.2px;
+}
+.site-test-text strong { font-weight:800; color:#ff4b4b; }
+
+/* close button */
+.site-test-close {
+    background: rgba(0,0,0,0.18);
+    color: #fff;
+    border: none;
+    width:36px;
+    height:36px;
+    border-radius:999px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:18px;
+    line-height:1;
+    transition: transform .12s, background .12s;
+}
+.site-test-close:hover { transform: translateY(-2px); background: rgba(0,0,0,0.28); }
+
+/* hide state */
+.site-test-badge.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-10px) scale(0.98);
+}
+
+/* responsive tweaks */
+@media (max-width: 700px) {
+    .site-test-text { font-size:0.95rem; }
+    .site-test-badge { top: 8px; width: calc(100% - 20px); max-width: 96vw; }
+    .site-test-close { width:32px; height:32px; font-size:16px; }
+}
+
+/* ensure navbar does not hide badge interactions */
+.topnav { z-index: 1000; } /* keep below badge */
+
+/* ...existing code... */
+
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #2c444c;
@@ -24,9 +140,12 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-
     transition: box-shadow 0.2s;
     box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+section {
+  scroll-margin-top: 80px; /* Navbar balandligiga teng qiymat */
 }
 
 .nav-contact{
@@ -102,10 +221,17 @@ img.logo-image {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.mid-nav:hover {
+  content: '';
+  display: flex;
+  /* height: 2px; */
+  background: #acc4d6;
+  color: #000;
+  /* width: 100%; */
+  border-radius: 1px;
+  /* position: absolute; */
+  left: 0;
+  bottom: 0;
 }
 
 /* Add an active class to highlight the current page */
@@ -116,9 +242,13 @@ img.logo-image {
 
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
-  display: none;
-  position: relative;
-  right: 0;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 120;
 }
 
 .logo-image{
@@ -128,7 +258,15 @@ img.logo-image {
     border-radius: 30px;
     margin-right: 8px;
 }
-
+.topnav .icon {
+    display: none;
+    position: absolute;
+    right: 18px;
+    top: 22px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 120;
+}
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 900px) {
@@ -136,19 +274,33 @@ img.logo-image {
   .topnav a.icon {
     float: right;
     display: block;
+    position: absolute;
   }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: fixed;}
+  .topnav.responsive {
+    position: fixed; 
+    height: 100%;
+    width: 60%;
+    left: 40%;
+    right: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
   .topnav.responsive a.icon {
     position: absolute;
-    right: 0;
   }
+  .topnav {
+        align-items: center;
+        justify-content: space-between;
+    }
   .topnav.responsive a.logo{
     display: flex;
     justify-content: flex-start;
+    margin-top: 10px;
 }
 
   .topnav.responsive a {
@@ -181,9 +333,9 @@ img.logo-image {
         display: absolute;
     }
     .topnav.responsive {
-
+        left:30%;
+        width: 70%;
         flex-direction: column;
-        height: auto;
         align-items: flex-start;
 
     }
@@ -218,6 +370,12 @@ img.logo-image {
     top: 0; left: 0;
     opacity: 0;
     transition: opacity 1s;
+}
+
+.hero-slider img.hero-slide {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
 }
 
 .hero-slide.active {
@@ -360,7 +518,7 @@ img.logo-image {
 .about-section {
     background: #ffffff;
     border-radius: 16px;
-    padding: 56px 0 48px 0;
+    padding: 20px 0 48px 0;
     margin: 0 auto 36px auto;
     max-width: 1200px;
     box-shadow: 0 4px 30px rgba(7,12,25,0.25);

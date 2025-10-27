@@ -808,4 +808,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // ...existing code...
 
+// ...existing code...
 
+document.addEventListener('DOMContentLoaded', function() {
+    // SITE TEST BADGE: close + remember in localStorage
+    const badge = document.getElementById('siteTestBadge');
+    if (badge) {
+        const dismissed = localStorage.getItem('siteTestBadgeDismissed');
+        // if (dismissed === '1') {
+        //     badge.classList.add('hidden');
+        // }
+
+        const closeBtn = badge.querySelector('.site-test-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                badge.classList.add('hidden');
+                try { localStorage.setItem('siteTestBadgeDismissed', '1'); } catch (err) { /* ignore */ }
+            });
+        }
+
+        // Allow clicking badge to open contact form (optional)
+        badge.addEventListener('click', (e) => {
+            // ignore clicks on close button
+            if (e.target.closest('.site-test-close')) return;
+            // open hero modal if exists
+            const heroBtn = document.getElementById('openHeroModal');
+            if (heroBtn) heroBtn.click();
+        });
+    }
+});
+
+// ...existing code...
