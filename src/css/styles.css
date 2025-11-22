@@ -1558,69 +1558,115 @@ why.why-card.card-hovered .why-card {
 /* ...existing code... */
 .contact-section {
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: 20px;
     max-width: 1200px;
-    margin: 48px auto 36px auto;
-    padding: 38px 24px 32px 24px;
-    box-shadow: 0 2px 12px rgba(26,79,163,0.08);
+    margin: 50px auto 40px auto;
+    padding: 40px 30px 35px 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.contact-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 .contact-title {
-    color: #3d485c;
+    color: #1a1a1a;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 28px;
-    letter-spacing: 1px;
+    margin-bottom: 32px;
+    letter-spacing: 1.2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .contact-content {
     display: flex;
-    align-items: flex-start;
-    gap: 36px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .contact-info {
-    color: #000000;
-    font-size: 1.08rem;
-    flex: 1 1 260px;
+    color: #222222;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    flex: 1 1 280px;
     min-width: 220px;
 }
 
 .contact-info a {
     color: #7c3aed;
     text-decoration: none;
-    transition: color 0.2s;
+    position: relative;
+    transition: color 0.3s, transform 0.2s;
 }
+
+.contact-info a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #1a4fa3;
+    transition: width 0.3s;
+}
+
 .contact-info a:hover {
     color: #1a4fa3;
-    text-decoration: underline;
+    transform: translateX(2px);
+}
+
+.contact-info a:hover::after {
+    width: 100%;
 }
 
 .contact-map {
-    flex: 1 1 350px;
-    min-width: 220px;
+    flex: 1 1 360px;
+    min-width: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
 
-@media (max-width: 700px) {
+.contact-map iframe {
+    width: 100%;
+    height: 240px;
+    border: 0;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.contact-map iframe:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
     .contact-content {
         flex-direction: column;
-        gap: 18px;
+        gap: 24px;
         align-items: stretch;
     }
     .contact-map iframe {
-        width: 100%;
-        min-width: 0;
-        height: 180px;
+        height: 200px;
     }
     .contact-section {
-        padding: 18px 6px 18px 6px;
+        padding: 25px 15px 25px 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    .contact-map iframe {
+        height: 180px;
     }
 }
 
@@ -2268,25 +2314,50 @@ h2 {
     width: 100%;
     position: relative;
     padding: 12px 0;
+    background: #f8f9fa; /* ixtiyoriy, fon uchun */
 }
 
-/* inner row containing duplicated logos */
-.partners-track-inner {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    /* animation: translate full width to left */
-    --scroll-duration: 10s; /* adjust speed: lower = faster */
-    animation: partnersScroll linear infinite var(--scroll-duration);
-}
-
+.partners-track-inner,
 .partners-track-inner-left {
     display: flex;
     gap: 48px;
     align-items: center;
-    /* animation: translate full width to left */
-    --scroll-duration: 10s; /* adjust speed: lower = faster */
-    animation: partnersScroll linear infinite var(--scroll-duration) reverse;
+}
+
+/* continuous scroll animation */
+.partners-track-inner {
+    animation: scroll-left 20s linear infinite;
+}
+
+.partners-track-inner-left {
+    animation: scroll-right 20s linear infinite;
+}
+
+/* keyframes for left scroll */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* keyframes for right scroll (reverse) */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* optional: make logos same height */
+.partner-logo img {
+    height: 80px; /* barcha logolar bir xil balandlikda */
+    width: auto;
+    display: block;
 }
 
 /* each logo box */
