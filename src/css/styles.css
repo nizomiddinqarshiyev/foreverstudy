@@ -348,13 +348,17 @@ img.logo-image {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* To‘liq ekran balandligi */
+    height: 1080px; /* To‘liq ekran balandligi */
     min-height: 500px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 36px;
+}
+
+main {
+    padding-top: 78px; /* fixed navbar balandligiga teng yuqori bo'shliq */
 }
 
 /* Slider */
@@ -476,8 +480,8 @@ img.logo-image {
 @media (max-width: 500px) {
 
     .hero-section {
-        height: 60vh;             /* to‘liq ekran balandligi */
-        min-height: 420px;
+        height: 250px;             /* to‘liq ekran balandligi */
+        min-height: 200px;
         position: relative;
     }
 
