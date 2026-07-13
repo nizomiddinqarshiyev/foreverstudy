@@ -17,8 +17,8 @@
 
     <div id="siteTestBadge" class="site-test-badge" role="status" aria-live="polite">
         <div class="site-test-badge-inner">
-            <span class="site-test-text">Sayt <strong>test rejimida</strong> ishlamoqda</span>
-            <button type="button" class="site-test-close" aria-label="Yopish">&times;</button>
+            <span class="site-test-text" data-i18n="site-test-text">Sayt <strong>test rejimida</strong> ishlamoqda</span>
+            <button type="button" class="site-test-close" aria-label="Yopish" data-i18n="site-test-close">&times;</button>
         </div>
     </div>
 
@@ -30,13 +30,27 @@
                 <div class="blue">FOREVER</div> <div class="red">STUDY</div>
             </div>
         </a>
-        <a class="mid-nav" href="#about">Biz haqimizda</a>
-        <a class="mid-nav" href="#services">Talabalarimizdan eshitamiz</a>
-        <a class="mid-nav" href="#partners">Hamkorlarimiz</a>
+        <a class="mid-nav" href="#about" data-i18n="nav-about">Biz haqimizda</a>
+        <a class="mid-nav" href="#services" data-i18n="nav-testimonials">Talabalarimizdan eshitamiz</a>
+        <a class="mid-nav" href="#partners" data-i18n="nav-partners">Hamkorlarimiz</a>
+        
+        <div class="lang-dropdown">
+            <button class="lang-dropdown-btn" aria-label="Select Language">
+                <span class="lang-btn-flag">🇺🇿</span>
+                <span class="lang-btn-text">O'zbekcha</span>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="lang-dropdown-content">
+                <a href="#" class="lang-option active" data-value="uz"><span class="flag">🇺🇿</span> O'zbekcha</a>
+                <a href="#" class="lang-option" data-value="en"><span class="flag">EN</span> English</a>
+                <a href="#" class="lang-option" data-value="ko"><span class="flag">🇰🇷</span> 한국어</a>
+            </div>
+        </div>
+
         <a href="#contact" class="nav-contact">
             <button class="nav-contact-btn">
                 <i class="fa fa-phone"></i>
-                Contact us
+                <span data-i18n="nav-contact">Contact us</span>
             </button>
             
         </a>
@@ -51,18 +65,18 @@
         <section class="hero-section">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>Kelajagingizni biz bilan boshlang!</h1>
-                <a href="#" class="hero-btn" id="openHeroModal" data-form="https://docs.google.com/forms/d/e/1FAIpQLSc7xZ2FsgIbGcQAiSxfA7yDc7SAHeAq81_aC_2u8Uv5UrOAcw/viewform?embedded=true">Online Konsultatsiya</a>
+                <h1 data-i18n="hero-title">Kelajagingizni biz bilan boshlang!</h1>
+                <a href="#" class="hero-btn" id="openHeroModal" data-form="https://docs.google.com/forms/d/e/1FAIpQLSc7xZ2FsgIbGcQAiSxfA7yDc7SAHeAq81_aC_2u8Uv5UrOAcw/viewform?embedded=true" data-i18n="hero-btn">Online Konsultatsiya</a>
             </div>
 
             <div class="modal-overlay" id="heroConsultModal">
                 <div class="modal-content">
                     <button class="modal-close" id="closeHeroModal">&times;</button>
-                    <h3>Online konsultatsiya — forma</h3>
+                    <h3 data-i18n="hero-modal-title">Online konsultatsiya — forma</h3>
                     <div class="hero-form-wrap">
                         <iframe id="heroFormIframe" src="" frameborder="0" style="width:100%;height:520px;border-radius:10px;" loading="lazy"></iframe>
                     </div>
-                    <div class="consult-success" id="heroConsultSuccess" style="display:none;">
+                    <div class="consult-success" id="heroConsultSuccess" style="display:none;" data-i18n="hero-success">
                         So‘rovingiz yuborildi! Tez orada siz bilan bog‘lanamiz.
                     </div>
                 </div>
@@ -93,22 +107,22 @@
     </main>
         <section id="about" class="about-section">
             <div class="about-inner">
-                <h2 class="about-title">Biz haqimizda</h2>
+                <h2 class="about-title" data-i18n="about-title">Biz haqimizda</h2>
     
                 <div class="about-videos">
                     <div class="about-card">
-                        <div class="about-caption">Jamoamiz haqida qisqacha</div>
+                        <div class="about-caption" data-i18n="about-caption-1">Jamoamiz haqida qisqacha</div>
                         <video class="about-video" controls playsinline preload="metadata">
                             <source src="video/team.mp4" type="video/mp4">
-                            Sizning brauzeringiz video tegi qo'llab-quvvatlamaydi.
+                            <span data-i18n="video-error">Sizning brauzeringiz video tegi qo'llab-quvvatlamaydi.</span>
                         </video>
                     </div>
     
                     <div class="about-card">
-                        <div class="about-caption">Koreyslarning o'zi sizni jo'natadi</div>
+                        <div class="about-caption" data-i18n="about-caption-2">Koreyslarning o'zi sizni jo'natadi</div>
                         <video class="about-video" controls playsinline preload="metadata">
                             <source src="video/korean_testimonial.mp4" type="video/mp4">
-                            Sizning brauzeringiz video tegi qo'llab-quvvatlamaydi.
+                            <span data-i18n="video-error">Sizning brauzeringiz video tegi qo'llab-quvvatlamaydi.</span>
                         </video>
                     </div>
                 </div>
@@ -120,8 +134,8 @@
                 <!-- EMU stats section ichida, .emu-stats-container dan keyin joylashtiring -->
         <div class="emu-blur-overlay"></div>
         <div class="emu-stats-left">
-            <div class="emu-stats-label">FOREVERSTUDY STATISTIKASI</div>
-            <h2 class="emu-stats-title" style="color: black; font-size: x-large;">
+            <div class="emu-stats-label" data-i18n="stats-label">FOREVERSTUDY STATISTIKASI</div>
+            <h2 class="emu-stats-title" style="color: black; font-size: x-large;" data-i18n="stats-title">
                 Xizmatlar mukammalligi<br>
                 <span class="emu-stats-title-accent">global nuqtai nazar bilan</span>
             </h2>
@@ -135,7 +149,7 @@
                         </div>
                         <div>
                             <div class="emu-stat-number" >40+</div>
-                            <div class="emu-stat-desc">Hamkorlar</div>
+                            <div class="emu-stat-desc" data-i18n="stats-partners">Hamkorlar</div>
                         </div>
                     </div>
                 </a>
@@ -145,7 +159,7 @@
                     </div>
                     <div>
                         <div class="emu-stat-number">1000+</div>
-                        <div class="emu-stat-desc">dan ortiq talabalar Viza olgan</div>
+                        <div class="emu-stat-desc" data-i18n="stats-visas">dan ortiq talabalar Viza olgan</div>
                     </div>
                 </div>
                 <div class="emu-stat-card">
@@ -154,7 +168,7 @@
                     </div>
                     <div>
                         <div class="emu-stat-number">95%</div>
-                        <div class="emu-stat-desc">Viza chiqish ko'rsatgichi</div>
+                        <div class="emu-stat-desc" data-i18n="stats-success-rate">Viza chiqish ko'rsatgichi</div>
                     </div>
                 </div>
                 <div class="emu-stat-card">
@@ -163,7 +177,7 @@
                     </div>
                     <div>
                         <div class="emu-stat-number">5+</div>
-                        <div class="emu-stat-desc">yillik tajriba</div>
+                        <div class="emu-stat-desc" data-i18n="stats-experience">yillik tajriba</div>
                     </div>
                 </div>
             </div>
@@ -172,14 +186,14 @@
 </section>
         <!-- ...existing code... -->
     <section class="why-section">
-        <h2 class="why-title" style="color: black; font-size: x-large;">NEGA AYNAN BIZ?</h2>
+        <h2 class="why-title" style="color: black; font-size: x-large;" data-i18n="why-title">NEGA AYNAN BIZ?</h2>
         <div class="why-grid">
             <div class="kg-grid">
                 <div class="why-card">
                 <div class="why-icon">
                     <img src="images/south-korea_2412445.png" alt="Viza ko'rsatkichi" />
                 </div>
-                <div class="why-text">
+                <div class="why-text" data-i18n="why-desc-1">
                     KOREYA JAMOAMIZ KOREYADA 10 YILGACHA O‘QIB KELGAN 
                 </div>
             </div>
@@ -187,7 +201,7 @@
                 <div class="why-icon">
                     <img src="images/germany_4719920.png" alt="Shaffoflik" />
                 </div>
-                <div class="why-text">
+                <div class="why-text" data-i18n="why-desc-2">
                     GERMANIYA JAMOAMIZ 4 YILDAN BERI GERMANIYAGA BORADI
                 </div>
             </div>
@@ -196,7 +210,7 @@
                 <div class="why-icon">
                     <img src="images/experience_2303934.png" alt="Tajriba" />
                 </div>
-                <div class="why-text">
+                <div class="why-text" data-i18n="why-desc-3">
                     KOREYA SOHASIDAGI 5 YILDAN ORTIQ TAJRIBA
                 </div>
             </div>
@@ -204,7 +218,7 @@
                 <div class="why-icon">
                     <img src="images/support_11096683.png" alt="Konsultatsiya" />
                 </div>
-                <div class="why-text">
+                <div class="why-text" data-i18n="why-desc-4">
                     KONSULTATSIYADAN BOSHLAB KOREYAGA BORGANINGIZGACHA TO'LIQ YORDAM
                 </div>
             </div>
@@ -212,7 +226,7 @@
                 <div class="why-icon">
                     <img src="images/calendar_1207430.png" alt="Shaffoflik" />
                 </div>
-                <div class="why-text">
+                <div class="why-text" data-i18n="why-desc-5">
                      VIZADAN KEYIN TO‘LOV QILISH IMKONIYATI
                 </div>
             </div>
@@ -226,97 +240,97 @@
 
 <section id="services">
     <div class="container">
-    <h2 class="services-title" style="color: black; font-size: x-large;">TALABALARIMIZDAN ESHITAMIZ</h2>
+    <h2 class="services-title" style="color: black; font-size: x-large;" data-i18n="testimonials-title">TALABALARIMIZDAN ESHITAMIZ</h2>
 </div>
 <div class="owl-carousel owl-theme" id="slider" style="display: grid; gap: 5px;">
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
                 <source src="video/vid1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-i18n="video-error">Your browser does not support the video tag.</span>
               </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/DBs8Z-_N7Yi/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/DBs8Z-_N7Yi/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
                 <source src="video/vid2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-i18n="video-error">Your browser does not support the video tag.</span>
               </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/C5BEpdRKUg0/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/C5BEpdRKUg0/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide" >
         <video width="100%" height="100%" muted autoplay>
                 <source src="video/vid3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-i18n="video-error">Your browser does not support the video tag.</span>
               </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/DPOPm4KjSkV/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/DPOPm4KjSkV/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
                 <source src="video/vid4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-i18n="video-error">Your browser does not support the video tag.</span>
               </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/C45OmzEKpX7/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/C45OmzEKpX7/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
                 <source src="video/vid5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-i18n="video-error">Your browser does not support the video tag.</span>
               </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/DO8KUYQDVMd/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/DO8KUYQDVMd/?utm_source=ig_web_copy_link" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
         <source src="video/vid6.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <span data-i18n="video-error">Your browser does not support the video tag.</span>
         </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/DBwIBmItTem/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/DBwIBmItTem/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
         <source src="video/vid7.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <span data-i18n="video-error">Your browser does not support the video tag.</span>
         </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/C5gHlueNlYa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/C5gHlueNlYa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
         <source src="video/vid8.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <span data-i18n="video-error">Your browser does not support the video tag.</span>
         </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/C4abRaKN3L5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/C4abRaKN3L5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
     <div class="slide">
         <video width="100%" height="100%" muted autoplay>
         <source src="video/vid9.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <span data-i18n="video-error">Your browser does not support the video tag.</span>
         </video>
         <div class="slide-content">
-            <div class="slide-title">Talabalarimizdan video lavhalar</div>
-        <a href="https://www.instagram.com/reel/Cz3hgysqTtx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;">Havola</a>
+            <div class="slide-title" data-i18n="testimonials-video-title">Talabalarimizdan video lavhalar</div>
+        <a href="https://www.instagram.com/reel/Cz3hgysqTtx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="slide_link" style="background-color: aqua; color: black; width: max-content;" data-i18n="testimonials-link">Havola</a>
         </div>
     </div>
 </div>
@@ -324,13 +338,13 @@
 
 
     <section id="contact" class="contact-section">
-        <h2 class="contact-title" style="color: black; font-size: x-large;">BIZNING MANZILIMIZ</h2>
+        <h2 class="contact-title" style="color: black; font-size: x-large;" data-i18n="contact-title">BIZNING MANZILIMIZ</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <p><b>Manzil:</b> Toshkent shahri, Sergeli tumani, Mirza Tursunzoda ko'chasi 34</p>
-                <p><b>Telefon:</b> <a href="tel:+998950209799">+998 95 020 97 99</a></p>
+                <p><b data-i18n="contact-address-label">Manzil:</b> <span data-i18n="contact-address-value">Toshkent shahri, Sergeli tumani, Mirza Tursunzoda ko'chasi 34</span></p>
+                <p><b data-i18n="contact-phone-label">Telefon:</b> <a href="tel:+998950209799">+998 95 020 97 99</a></p>
                 <p><b>T.me:</b> <a href="https://t.me/operator_forever_study">@operator_forever_study</a></p>
-                <p><b>Ish vaqti:</b> Dushanba–Shanba, 9:00–18:00</p>
+                <p><b data-i18n="contact-time-label">Ish vaqti:</b> <span data-i18n="contact-time-value">Dushanba–Shanba, 9:00–18:00</span></p>
             </div>
             <div class="contact-map">
                 <iframe 
@@ -345,7 +359,7 @@
             <div class="social-meta">
                 <a class="social-link" href="https://t.me/Forever_Study_Consulting" target="_blank" rel="noopener">t.me/foreverstudy</a>
                 <div class="social-actions">
-                    <button class="copy-btn" data-link="https://t.me/Forever_Study_Consulting" aria-label="Copy Telegram link">Copy</button>
+                    <button class="copy-btn" data-link="https://t.me/Forever_Study_Consulting" aria-label="Copy Telegram link" data-i18n="copy-btn">Copy</button>
                 </div>
             </div>
         </div>
@@ -355,7 +369,7 @@
             <div class="social-meta">
                 <a class="social-link" href="https://www.instagram.com/forever_study_consulting" target="_blank" rel="noopener">@foreverstudy</a>
                 <div class="social-actions">
-                    <button class="copy-btn" data-link="https://www.instagram.com/forever_study_consulting" aria-label="Copy Instagram link">Copy</button>
+                    <button class="copy-btn" data-link="https://www.instagram.com/forever_study_consulting" aria-label="Copy Instagram link" data-i18n="copy-btn">Copy</button>
                 </div>
             </div>
         </div>
@@ -365,7 +379,7 @@
             <div class="social-meta">
                 <a class="social-link" href="https://www.facebook.com/foreverstudyconsulting" target="_blank" rel="noopener">facebook.com/foreverstudy</a>
                 <div class="social-actions">
-                    <button class="copy-btn" data-link="https://www.facebook.com/foreverstudyconsulting" aria-label="Copy Facebook link">Copy</button>
+                    <button class="copy-btn" data-link="https://www.facebook.com/foreverstudyconsulting" aria-label="Copy Facebook link" data-i18n="copy-btn">Copy</button>
                 </div>
             </div>
         </div>
@@ -509,47 +523,47 @@
 
 <section id="faq" class="faq-section">
     <h2 class="faq-title" style="color: black; font-size: x-large;">
-        <span>Tez-tez so'raladigan</span>
-        <span class="faq-title-gradient">savollar</span>
+        <span data-i18n="faq-title-1">Tez-tez so'raladigan</span>
+        <span class="faq-title-gradient" data-i18n="faq-title-2">savollar</span>
     </h2>
-    <p class="faq-subtitle">
+    <p class="faq-subtitle" data-i18n="faq-subtitle">
         Sizni qiziqtirgan savollarga javob toping yoki bizga murojaat qiling
     </p>
     <div class="faq-list">
         <div class="faq-item">
-            <button class="faq-question">Viza olish uchun qanday hujjatlar kerak? <span class="faq-toggle">+</span></button>
+            <button class="faq-question"><span data-i18n="faq-q1">Viza olish uchun qanday hujjatlar kerak?</span> <span class="faq-toggle">+</span></button>
             <div class="faq-answer">
-                <p>Pasport, diplom yoki attestat, bank schyoti, rasm, tarjima va apostil qilingan hujjatlar, va boshqa zarur hujjatlar ro‘yxatini bizning mutaxassislarimizdan olishingiz mumkin.</p>
+                <p data-i18n="faq-a1">Pasport, diplom yoki attestat, bank schyoti, rasm, tarjima va apostil qilingan hujjatlar, va boshqa zarur hujjatlar ro‘yxatini bizning mutaxassislarimizdan olishingiz mumkin.</p>
             </div>
         </div>
         <div class="faq-item">
-            <button class="faq-question">To‘lovni qanday amalga oshirish mumkin? <span class="faq-toggle">+</span></button>
+            <button class="faq-question"><span data-i18n="faq-q2">To‘lovni qanday amalga oshirish mumkin?</span> <span class="faq-toggle">+</span></button>
             <div class="faq-answer">
-                <p>To‘lovni naqd, bank orqali yoki onlayn tarzda amalga oshirishingiz mumkin. Batafsil ma’lumot uchun biz bilan bog‘laning.</p>
+                <p data-i18n="faq-a2">To‘lovni naqd, bank orqali yoki onlayn tarzda amalga oshirishingiz mumkin. Batafsil ma’lumot uchun biz bilan bog‘laning.</p>
             </div>
         </div>
         <div class="faq-item">
-            <button class="faq-question">Agar viza chiqmasa, to‘lov qaytariladimi? <span class="faq-toggle">+</span></button>
+            <button class="faq-question"><span data-i18n="faq-q3">Agar viza chiqmasa, to‘lov qaytariladimi?</span> <span class="faq-toggle">+</span></button>
             <div class="faq-answer">
-                <p>Ha, viza chiqmasa, to‘lovingiz 100% qaytariladi.</p>
+                <p data-i18n="faq-a3">Ha, viza chiqmasa, to‘lovingiz 100% qaytariladi.</p>
             </div>
         </div>
         <div class="faq-item">
-            <button class="faq-question">Qaysi davlatlarga o‘qishga yuborasiz? <span class="faq-toggle">+</span></button>
+            <button class="faq-question"><span data-i18n="faq-q4">Qaysi davlatlarga o‘qishga yuborasiz?</span> <span class="faq-toggle">+</span></button>
             <div class="faq-answer">
-                <p>Koreya, Polsha, Litva, Vengriya, Chexiya va boshqa ko‘plab davlatlarga o‘qishga yuboramiz.</p>
+                <p data-i18n="faq-a4">Koreya, Polsha, Litva, Vengriya, Chexiya va boshqa ko‘plab davlatlarga o‘qishga yuboramiz.</p>
             </div>
         </div>
         <div class="faq-item">
-            <button class="faq-question">Konsultatsiya bepulmi? <span class="faq-toggle">+</span></button>
+            <button class="faq-question"><span data-i18n="faq-q5">Konsultatsiya bepulmi?</span> <span class="faq-toggle">+</span></button>
             <div class="faq-answer">
-                <p>Ha, dastlabki konsultatsiya mutlaqo bepul!</p>
+                <p data-i18n="faq-a5">Ha, dastlabki konsultatsiya mutlaqo bepul!</p>
             </div>
         </div>
     </div>
     <div class="faq-contact">
-        <div class="faq-contact-title">Yana savollaringiz bormi?</div>
-        <div class="faq-contact-desc">Savollaringizni telegramdagi <a href="https://t.me/operator_forever_study">@operator_forever_study</a> manziliga yuboring yoki <b><a href="tel:+998950209799">+998950209799</a></b> raqamiga qo‘ng‘iroq qiling.</div>
+        <div class="faq-contact-title" data-i18n="faq-contact-title">Yana savollaringiz bormi?</div>
+        <div class="faq-contact-desc" data-i18n="faq-contact-desc">Savollaringizni telegramdagi <a href="https://t.me/operator_forever_study">@operator_forever_study</a> manziliga yuboring yoki <b><a href="tel:+998950209799">+998950209799</a></b> raqamiga qo‘ng‘iroq qiling.</div>
     </div>
 </section>
 
@@ -566,11 +580,11 @@
                 <span>FOREVERSTUDY</span>
             </div>
             <div class="footer-links">
-                <a href="#about">Biz haqimizda</a>
-                <a href="#services">Talabalarimizdan eshitamiz</a>
-                <a href="#partners">Hamkorlarimiz</a>
-                <a href="#tariflar">Ta’riflarimiz</a>
-                <a href="#contact">Aloqa</a>
+                <a href="#about" data-i18n="nav-about">Biz haqimizda</a>
+                <a href="#services" data-i18n="nav-testimonials">Talabalarimizdan eshitamiz</a>
+                <a href="#partners" data-i18n="nav-partners">Hamkorlarimiz</a>
+                <a href="#tariflar" style="display:none;">Ta’riflarimiz</a>
+                <a href="#contact" data-i18n="footer-contact">Aloqa</a>
             </div>
             <div class="footer-social">
                 <a href="https://t.me/Forever_Study_Consulting" target="_blank" aria-label="Telegram">
@@ -586,6 +600,8 @@
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/splide.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

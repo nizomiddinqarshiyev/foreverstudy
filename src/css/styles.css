@@ -129,7 +129,7 @@ body {
 .topnav {
   background-color: #2c444c;
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   align-items: center;
   justify-content: center;
     height: 78px;
@@ -271,7 +271,7 @@ img.logo-image {
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 900px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav > a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
@@ -304,7 +304,7 @@ img.logo-image {
     margin-top: 10px;
 }
 
-  .topnav.responsive a {
+  .topnav.responsive > a {
     float: none;
     display: block;
     text-align: left;
@@ -2406,13 +2406,127 @@ h2 {
 @media (max-width: 1100px) {
     .partner-logo { min-width: 140px; max-width: 160px; }
     .partner-logo img { max-width: 140px; max-height: 60px; }
-    /* .partners-track-inner { gap: 28px; --scroll-duration: 24s; } */
 }
 
 @media (max-width: 700px) {
     .partners-title { font-size: 1.1rem; }
     .partner-logo { min-width: 80px; max-width: 130px; padding: 3px; }
     .partner-logo img { max-width: 110px; max-height: 48px; }
-    /* .partners-track-inner { gap: 18px; --scroll-duration: 5s; } */
 }
 
+/* Language Dropdown Selector Styles */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+.lang-dropdown-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f2f2f2;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lang-dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.lang-dropdown-btn i {
+    font-size: 11px;
+    margin-left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown.open .lang-dropdown-btn i {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-content {
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(30, 41, 59, 0.95);
+    min-width: 140px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15);
+    border-radius: 12px;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.lang-dropdown.open .lang-dropdown-content {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lang-dropdown-content a {
+    color: #cbd5e1 !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    text-align: left !important;
+    transition: all 0.2s ease;
+    float: none !important;
+    background: transparent !important;
+}
+
+.lang-dropdown-content a:hover {
+    background: rgba(56, 189, 248, 0.15) !important;
+    color: #f8fafc !important;
+}
+
+.lang-dropdown-content a.active {
+    background: rgba(56, 189, 248, 0.25) !important;
+    color: #38bdf8 !important;
+    font-weight: bold;
+}
+
+.lang-btn-flag, .flag {
+    font-size: 15px;
+    line-height: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .lang-dropdown {
+        margin: 10px 16px;
+        display: block;
+        width: calc(100% - 32px);
+    }
+    
+    .lang-dropdown-btn {
+        width: 100%;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .lang-dropdown-content {
+        left: 0;
+        right: 0;
+        top: calc(100% + 4px);
+    }
+}
