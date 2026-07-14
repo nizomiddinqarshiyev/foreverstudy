@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    
     // Initialize translations
     applyTranslations(currentLang);
 });
